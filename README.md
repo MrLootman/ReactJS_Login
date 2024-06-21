@@ -8,7 +8,7 @@
 
 - Tu vas t'intéresser au fichier `RegistrationForm.jsx`. La première étape de cet atelier se trouve dans ce fichier.
 
-- Cette étape est réussie lorsque, avec Postman, tu peux faire un GET sur la route "http://localhost:5000/api/users", et voir apparaître la / les personne(s) que tu viens de créer. On constatera que le mot de passe est en clair : la prochaine étape consistera à utiliser un hachage cryptographique pour le protéger.
+- Cette étape est réussie lorsque, avec Postman, tu peux faire un GET sur la route "http://localhost:3310/api/users", et voir apparaître la / les personne(s) que tu viens de créer. On constatera que le mot de passe est en clair : la prochaine étape consistera à utiliser un hachage cryptographique pour le protéger.
 
 ### Etape 2 : Créé le middleware qui permettra de hasher le mot de passe
 
