@@ -1,0 +1,30 @@
+.connexion-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    90deg,
+    rgba(25, 21, 96, 1) 0%,
+    rgba(134, 40, 242, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+.connexion-area {
+  animation: slideIn 1.4s cubic-bezier(0.18, 0.89, 0.32, 1.27);
+  background-color: rgb(255, 252, 248);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 70vh;
+  width: 70vw;
+  border-radius: 40px;
+  box-shadow:
+    rgba(62, 62, 200, 0.25) 0px 54px 55px,
+    rgba(135, 117, 215, 0.12) 0px -12px 30px,
+    rgba(255, 252, 252, 0.12) 0px 4px 6px,
+    rgba(83, 83, 227, 0.17) 0px 12px 13px,
+    rgba(46, 126, 216, 0.09) 0px -3px 5px;
+}

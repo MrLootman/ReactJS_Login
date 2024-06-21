@@ -12,7 +12,7 @@ class UserRepository extends AbstractRepository {
   async create(firstname, email, password) {
     // Execute the SQL INSERT query to add a new user to the "user" table
     const [result] = await this.database.query(
-      `insert into ${this.table} (firstname, email, password) values (?, ?, ?)`,
+      `INSERT INTO ${this.table} (firstname, email, password) VALUES (?, ?, ?)`,
       [firstname, email, password]
     );
 
@@ -25,7 +25,7 @@ class UserRepository extends AbstractRepository {
   async read(id) {
     // Execute the SQL SELECT query to retrieve a specific user by its ID
     const [rows] = await this.database.query(
-      `select * from ${this.table} where id = ?`,
+      `SELECT * FROM ${this.table} WHERE id = ?`,
       [id]
     );
 

@@ -1,11 +1,7 @@
 import { Outlet } from "react-router-dom";
 
 function App() {
-  return (
-    <main className="app">
-      <Outlet />
-    </main>
-  );
+  return <Outlet />;
 }
 
 export default App;

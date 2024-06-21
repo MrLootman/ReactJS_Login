@@ -1,39 +1,21 @@
-// import { useState } from "react"
-// import ConfirmModal from "./ConfirmModal";
 import { NavLink } from "react-router-dom";
+// import { useState } from "react";
+// import Spinner from "./Spinner";
 
 export default function RegistrationForm() {
-  function handleSubmit(e) {
-    e.preventDefault();
+  // ? Tu pourras utiliser cette variable d'état si tu veux déclencher une animation lors du submit
+  // const [loading, setLoading] = useState(false);
 
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
-
-    fetch("http://localhost:3310/api/users", {
-      method: "POST",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((res) => console.warn(res))
-      .catch((err) => console.error(err));
-
-    // const data = {
-    //   firstName: formData.get("firstname"),
-    //   email: formData.get("email"),
-    //   password: formData.get("password"),
-    // };
-
-    // console.warn(data);
-  }
+  /* 
+    Met en place la fonction handleSubmit.
+    Cette fonction doit envoyer les informations renseignées dans le formulaire
+    vers le backend, à la route http://localhost:3310/api/users
+  */
 
   return (
-    <section className="registration-page_section_form">
+    <section className="registration-form">
       <div aria-label="Horizontal band giving a shadow effect between the image and the form." />
-      <form onSubmit={handleSubmit}>
+      <form>
         <label htmlFor="registration-firstname">
           {/* Firstname */}
           <input
@@ -66,8 +48,8 @@ export default function RegistrationForm() {
         </label>
         <button type="submit">Envoyer</button>
       </form>
-      <NavLink to="/register" aria-label="Message de création de compte">
-        <strong>Créez votre compte</strong>
+      <NavLink to="/" aria-label="Message de création de compte">
+        <strong>Vous avez déjà un compte ?</strong>
       </NavLink>
     </section>
   );

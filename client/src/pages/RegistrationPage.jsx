@@ -1,14 +1,11 @@
-import LoginImage from "../components/LoginImage";
 import RegistrationForm from "../components/RegistrationForm";
+import ConnexionLayout from "../components/layouts/ConnexionLayout";
 
 function RegistrationPage() {
   return (
-    <main className="registration-page">
-      <section className="registration-page_section">
-        <LoginImage />
-        <RegistrationForm />
-      </section>
-    </main>
+    <ConnexionLayout>
+      <RegistrationForm />
+    </ConnexionLayout>
   );
 }
 

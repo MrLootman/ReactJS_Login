@@ -1,12 +1,10 @@
-// import { useState } from "react"
-// import ConfirmModal from "./ConfirmModal";
 import { NavLink } from "react-router-dom";
 
 export default function LoginForm() {
   return (
-    <section className="login-page_section_form">
+    <section className="login-form">
       <div aria-label="Horizontal band giving a shadow effect between the image and the form." />
-      <span>Bienvenue !</span>
+      <span id="welcome">Bienvenue !</span>
       <form>
         <label htmlFor="login-email">
           {/* Email */}
@@ -35,6 +33,3 @@ export default function LoginForm() {
     </section>
   );
 }
-
-// expected status 200
-// to Be 404

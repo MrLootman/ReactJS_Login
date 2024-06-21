@@ -4,6 +4,8 @@ const express = require("express");
 
 const app = express();
 
+const path = require("path");
+
 // Configure it
 
 /* ************************************************************************* */
@@ -12,10 +14,6 @@ const app = express();
 
 // CORS (Cross-Origin Resource Sharing) is a security mechanism in web browsers that blocks requests from a different domain than the server.
 // You may find the following magic line in forums:
-
-const cors = require("cors");
-
-app.use(cors());
 
 // You should NOT do that: such code uses the `cors` module to allow all origins, which can pose security issues.
 // For this pedagogical template, the CORS code is commented out to show the need for defining specific allowed origins.
@@ -27,19 +25,15 @@ app.use(cors());
 // 4. Be sure to only have URLs in the array with domains from which you want to allow requests.
 // For example: ["http://mysite.com", "http://another-domain.com"]
 
-/*
 const cors = require("cors");
 
 app.use(
   cors({
     origin: [
       process.env.CLIENT_URL, // keep this one, after checking the value in `server/.env`
-      "http://mysite.com",
-      "http://another-domain.com",
-    ]
+    ],
   })
 );
-*/
 
 /* ************************************************************************* */
 
@@ -109,9 +103,6 @@ app.use("/api", apiRouter);
 // 1. Uncomment the lines related to serving static files and redirecting unhandled requests.
 // 2. Ensure that the `reactBuildPath` points to the correct directory where your client's build artifacts are located.
 
-/*
-const path = require("path");
-
 const reactBuildPath = path.join(__dirname, "/../../client/dist");
 const publicFolderPath = path.join(__dirname, "/../public");
 
@@ -128,7 +119,6 @@ app.get("*.*", express.static(publicFolderPath, { maxAge: "1y" }));
 app.get("*", (_, res) => {
   res.sendFile(path.join(reactBuildPath, "/index.html"));
 });
-*/
 
 /* ************************************************************************* */
 
