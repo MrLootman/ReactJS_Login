@@ -70,7 +70,30 @@ const login = async (req, res, next) => {
   }
 };
 
+const authorize = (req, res, next) => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader) {
+    res.sendStatus(401);
+    return;
+  }
+
+  const [type, token] = authHeader.split(" ");
+  if (type !== "Bearer") {
+    res.sendStatus(401);
+    return;
+  }
+
+  jwt.verify(token, process.env.APP_SECRET, (err) => {
+    if (err) {
+      res.sendStatus(401);
+    } else {
+      next();
+    }
+  });
+}
+
 module.exports = {
   login,
   hashPassword,
+  authorize,
 }
