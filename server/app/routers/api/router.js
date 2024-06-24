@@ -7,8 +7,11 @@ const router = express.Router();
 /* ************************************************************************* */
 
 const userRouter = require("./users/router");
+const { login } = require("../../controllers/authActions");
+const { credentialsValidation } = require("../../services/credentialValidation");
 
 router.use("/users", userRouter);
+router.use("/login", credentialsValidation, login)
 
 /* ************************************************************************* */
 
