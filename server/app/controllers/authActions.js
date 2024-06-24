@@ -1,5 +1,6 @@
 const argon2 = require("argon2");
 const jwt = require("jsonwebtoken");
+// const Cookies = require('cookies');
 const tables = require("../../database/tables");
 
 const hashingOptions = {
@@ -56,6 +57,14 @@ const login = async (req, res, next) => {
     if (token) res.status(200).send({ token, user });
     else throw new Error("Token not created");
 
+    // COOKIE credentials
+    // const cookie = new Cookies(req, res)
+    //    cookie.set('token', token, {
+    //    httpOnly: true,
+    //    secure: false,
+    //    expires: new Date(Date.now() + 4 * 60 * 60 * 1000),
+    //  })
+    //   res.status(200).send({ user });
   } catch (err) {
     next(err);
   }
