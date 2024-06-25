@@ -11,7 +11,7 @@ const { login } = require("../../controllers/authActions");
 const { credentialsValidation } = require("../../services/credentialValidation");
 
 router.use("/users", userRouter);
-router.use("/login", credentialsValidation, login)
+router.post("/login", credentialsValidation, login)
 
 /* ************************************************************************* */
 
